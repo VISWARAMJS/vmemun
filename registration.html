@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VME MUN 2026 | Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --purple-1: #0a0216;
+            --purple-2: #140826;
+            --purple-3: #1f0e3a;
+            --purple-4: #3b1c6e;
+            --purple-5: #6b3bc9;
+            --purple-6: #9b6eff;
+            --purple-7: #c49eff;
+            --crisis-red: #ff3b6f;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--purple-1), var(--purple-2));
+            color: #eceaff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+        }
+
+        .registration-container {
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        /* Back Button */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(15, 8, 32, 0.9);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--purple-5);
+            color: var(--purple-7);
+            padding: 12px 24px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            background: rgba(107, 59, 201, 0.3);
+            border-color: var(--purple-6);
+            transform: translateX(-5px);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, var(--purple-7), var(--purple-6));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 12px;
+        }
+
+        .header p {
+            color: #bcabdd;
+            font-size: 1rem;
+        }
+
+        /* Two Container Grid */
+        .registration-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        /* Individual Registration Container */
+        .reg-card {
+            background: rgba(15, 8, 32, 0.85);
+            backdrop-filter: blur(16px);
+            border-radius: 48px;
+            padding: 48px 32px;
+            text-align: center;
+            border: 1px solid rgba(107, 59, 201, 0.4);
+            transition: 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reg-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(155, 110, 255, 0.1), transparent);
+            transition: 0.5s;
+        }
+
+        .reg-card:hover::before {
+            left: 100%;
+        }
+
+        .reg-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--purple-5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(107, 59, 201, 0.3);
+        }
+
+        /* Icon Styling */
+        .card-icon {
+            width: 85px;
+            height: 85px;
+            background: linear-gradient(135deg, rgba(107, 59, 201, 0.2), rgba(155, 110, 255, 0.1));
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 28px;
+            border: 1px solid rgba(107, 59, 201, 0.5);
+        }
+
+        .card-icon i {
+            font-size: 3rem;
+            color: var(--purple-6);
+        }
+
+        .reg-card h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #fff, var(--purple-7));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .reg-card .price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--purple-7);
+            margin: 16px 0 8px;
+        }
+
+        .reg-card .price small {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: #bcabdd;
+        }
+
+        .reg-card .description {
+            color: #bcabdd;
+            font-size: 0.85rem;
+            margin: 16px 0 24px;
+            line-height: 1.6;
+        }
+
+        .feature-list {
+            text-align: left;
+            margin: 24px 0;
+            padding-left: 20px;
+        }
+
+        .feature-list li {
+            margin: 10px 0;
+            font-size: 0.85rem;
+            color: #d0c5f0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-list li i {
+            color: var(--purple-6);
+            font-size: 0.8rem;
+            width: 20px;
+        }
+
+        .register-btn {
+            background: linear-gradient(95deg, var(--purple-5), var(--purple-4));
+            border: none;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .register-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(107, 59, 201, 0.5);
+            gap: 16px;
+        }
+
+        /* School/Institution Card - slightly different styling */
+        .reg-card.school .card-icon {
+            background: linear-gradient(135deg, rgba(255, 59, 111, 0.2), rgba(107, 59, 201, 0.1));
+        }
+
+        .reg-card.school .card-icon i {
+            color: var(--crisis-red);
+        }
+
+        .reg-card.school .price {
+            color: var(--crisis-red);
+        }
+
+        /* Footer Note */
+        .footer-note {
+            text-align: center;
+            padding: 30px;
+            background: rgba(15, 8, 32, 0.6);
+            backdrop-filter: blur(12px);
+            border-radius: 60px;
+            border: 1px solid rgba(107, 59, 201, 0.3);
+        }
+
+        .footer-note p {
+            color: #9b8ac2;
+            font-size: 0.8rem;
+        }
+
+        .footer-note i {
+            color: var(--purple-6);
+            margin: 0 4px;
+        }
+
+        @media (max-width: 768px) {
+            .registration-options { gap: 25px; }
+            .reg-card { padding: 32px 24px; }
+            .header h1 { font-size: 2.2rem; }
+            .back-btn { margin-bottom: 25px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="registration-container">
+        <button class="back-btn" onclick="window.location.href='PAGE.html'">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </button>
+        <div class="header">
+            <h1>Choose Your Registration Type</h1>
+            <p>Select the option that best fits your participation</p>
+        </div>
+        <div class="registration-options">
+            <div class="reg-card" id="individualCard">
+                <div class="card-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h2>Individual Registration</h2>
+                <div class="price">₹1400 <small>/ delegate</small></div>
+                <div class="description">
+                    For solo delegates registering independently
+                </div>
+                <button class="register-btn" id="individualBtn">
+                    Register as Individual <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="reg-card school" id="institutionCard">
+                <div class="card-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <h2>Institution Registration</h2>
+                <div class="price">₹1400 <small>/ delegate </small></div>
+                <div class="description">
+                    For schools delegations
+                </div>
+
+                <button class="register-btn" id="institutionBtn">
+                    Register Institution <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer Note -->
+        <div class="footer-note">
+            <p><i class="fas fa-info-circle"></i> For delegation of 15+ members, Head Delegate must register the institution first, then all individual members register separately.</p>
+        </div>
+    </div>
+
+    <script>
+        const IL = "https://docs.google.com/forms/d/e/1FAIpQLSdlvoLBo32xzWw2REl_2Cf9wK2M6jcPqhvx3JuQzOES7O0AXw/viewform";
+        const INL = "https://docs.google.com/forms/d/e/1FAIpQLSey7GU3z3evOwPsHCCFQa41EqGIQzNhyoJb9TRoYpx0sZnW6Q/viewform";
+    
+        document.getElementById('individualBtn').addEventListener('click', function() {
+            window.open(IL, '_blank');
+        });
+        
+        document.getElementById('individualCard').addEventListener('click', function(e) {
+            if (e.target.closest('#individualBtn')) return;
+            window.open(IL, '_blank');
+        });
+        
+        document.getElementById('institutionBtn').addEventListener('click', function() {
+            window.open(INL, '_blank');
+        });
+        
+        document.getElementById('institutionCard').addEventListener('click', function(e) {
+            if (e.target.closest('#institutionBtn')) return;
+            window.open(INL, '_blank');
+        });
+    </script>
+</body>
+</html>
