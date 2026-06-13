@@ -30,7 +30,7 @@
             <li><a href="#schedule">Schedule</a></li>
             <li><a href="#eboard">Secretariat</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="#" class="btn-outline" style="padding: 6px 20px;">Register</a></li>
+            <li><a class="btn-outline" id="btn-outline" style="padding: 6px 20px;">Register</a></li>
         </ul>
     </div>
 </header>
@@ -58,7 +58,8 @@
             <span>⚡ VME MUN | EDITION 5</span>
             <span>🎯 18 COMMITTEES | 600+ DELEGATES</span>
             <span>🌍 CHENGALPATTU | JULY 24-25, 2026</span>
-            <span>🏆 REGISTER NOW</span>            <span>🔥 WE ARE BACK</span>
+            <span>🏆 REGISTER NOW</span>            
+            <span>🔥 WE ARE BACK</span>
             <span>⚡ VME MUN | EDITION 5</span>
             <span>🎯 18 COMMITTEES | 600+ DELEGATES</span>
             <span>🌍 CHENGALPATTU | JULY 24-25, 2026</span>
@@ -92,9 +93,9 @@
             <div class="bento-item bento-large reveal">
                 <div class="badge">About Conference</div>
                 <h2>A stage for the next generation of world leaders.</h2>
-                <p>VME MUN 2026 brings together 500+ delegates from across the country for 2 days of rigorous debate, critical thinking, and collaborative diplomacy. Join us at Chengalpattu on July 24-25.</p>
+                <p>VME MUN 2026 brings together 600+ delegates from across the country for 2 days of rigorous debate, critical thinking, and collaborative diplomacy. Join us at Chengalpattu on July 24-25.</p>
                 <div style="margin-top: 24px;">
-                    <a href="#contact" class="btn-small">Register Now →</a>
+                    <a class="btn-small" id="btn-small">Register Now →</a>
                 </div>
             </div>
             <div class="bento-item stat-card reveal">
@@ -121,173 +122,19 @@
     </div>
 </section>
 
-
 <section id="committees" class="alt-bg">
     <div class="container">
-        <div class="section-header reveal">
-            <div class="badge">Committees & Agendas</div>
-            <h2 class="section-title">Choose your arena.</h2>
-            <p class="section-sub">Eighteen committees spanning Geopolitics, Economics, Human rights, Indian policy, Justice, War, Development and Press.</p>
+        <div class="section-header reveal"><div class="badge">Committees & Agendas</div><h2 class="section-title">Choose your arena.</h2><p class="section-sub">Eighteen committees spanning Geopolitics, Economics, Human rights, Indian policy, Justice, War, Development and Press.</p></div>
+        
+        <div class="first-ever">
+            <div class="badge">⚡ FIRST TIME EVER ⚡</div>
+            <h3 style="font-size: 1.8rem; margin: 12px 0; text-align: center;">Historic Debut Committees</h3>
+            <p style="color: var(--purple-7); text-align: center; margin-bottom: 30px;">Witness history as these prestigious committees make their VME MUN debut</p>
+            <div id="firstgrid" class="featured-committees"></div>
         </div>
-        <div class="committees-grid">
-            <div class="committee-card reveal">
-                <img src="assets/UNGA.png" alt="" class="committee-logo">
-                <h3>UNGA</h3>
-                <p>United Nations General Assembly </p>
-                <div class="committee-topic">Situation in the Indian Subcontinent</div>
-                <div class="committee-topic">Freeze Date: December 7, 1971</div>
-            </div>
-            <div class="committee-card reveal">
-                <img src="assets/UNSC.png" alt="" class="committee-logo">
-                <h3>UNSC</h3>
-                <p>United Nations Security Council</p>
-                <div class="committee-topic">"The Great War Of Africa"</div>
-                <div class="committee-topic">Freeze Date: August 2, 1998</div>
-            </div>
-            <div class="committee-card reveal">
-                <img src="assets/UNODC.png" alt="" class="committee-logo">
-                <h3>UNODC</h3>
-                <p>United Nations Office on Drugs & Crime</p>
-                <div class="committee-topic">Assessing Drug Policy Frameworks and Their Impact on Public Health, Human Rights, Security, Corruption, and Illicit Financial Networks</div>
-            </div>
-            <div class="committee-card reveal">
-                <img src="assets/ECOSOC.png" alt="" class="committee-logo">
-                <h3>ECOSOC</h3>
-                <p>Economic & Social Committee</p>
-                <div class="committee-topic">Post-2030 Development Agenda</div>
-            </div>
-            <div class="committee-card reveal">
-                <img src="assets/UNEP.png" alt="" class="committee-logo">
-                <h3>UNEP</h3>
-                <p>United Nations Environment Programme</p>
-                <div class="committee-topic">Combating Plastic Pollution Across Global Ecosystem As A Response To The Triple Planetary Crisis</div>
-            </div>
-            <div class="committee-card reveal">
-                <img src="assets/WHO.png" alt="" class="committee-logo">
-                <h3>WHO</h3>
-                <p>World Health Organization</p>
-                <div class="committee-topic">Addressing long-term health impacts of biological weaponry on the global population</div>
-            </div>
-            <div class="committee-card reveal">
-                <img src="assets/UNHRC.png" alt="" class="committee-logo">
-                <h3>UNHRC</h3>
-                <p>United Nations Human Rights Council</p>
-                <div class="committee-topic">Discussion On The Status Of Reproductive Rights In Consideration Of Universal Human Rights</div>
-            </div>
-            <div class="committee-card reveal">
-                <img src="assets/COPUOS.png" alt="" class="committee-logo">
-                <h3>COPUOS</h3>
-                <p>Committee on the Peaceful Uses of Outer Space</p>
-                <div class="committee-topic">Developing International Frameworks For Space Traffic Management And Collision Avoidance</div>
-            </div>
-            <div class="committee-card reveal">
-                <img src="assets/UNDP.png" alt="" class="committee-logo">
-                <h3>UNDP</h3>
-                <p>United Nations Development Program</p>
-                <div class="committee-topic">Ensuring Affordable Basic Services for All in Alignment with SDG 1: Should Governments Prioritize Universal Subsidies or Targeted Welfare Programs?</div>
-            </div>
-            <div class="committee-card reveal">
-                <img src="assets/UNICEF.png" alt="" class="committee-logo">
-                <h3>UNICEF</h3>
-                <p>United Nations International Children's Fund</p>
-                <div class="committee-topic">Addressing the committee's role in advocating emergency child protection services or long-term rights-based social advocacy amid escalating armed conflicts and global tensions</div>
-            </div>
-            <div class="committee-card reveal">
-                <img src="assets/DISEC.png" alt="" class="committee-logo">
-                <h3>DISEC</h3>
-                <p>Disarmament & International Security Committee</p>
-                <div class="committee-topic">Establishment of a nuclear - weapon free zone in the region of the Middle East</div>
-                <div class="committee-topic">Freeze Date: September 25, 2012</div>
-            </div>
-            <div class="committee-card reveal">
-                <img src="assets/UNFCCC.png" alt="" class="committee-logo">
-                <h3>UNFCCC</h3>
-                <p>United Nations Framework Convention on Climate Change</p>
-                <div class="committee-topic">The Climate Refugee Crisis: Bridging the Legal Gap in Human Mobility and Global Sovereignty.</div>
-            </div>
-            <div class="committee-card reveal">
-                <img src="assets/UNHCR.png" alt="" class="committee-logo">
-                <h3>UNHCR</h3>
-                <p>United Nations High Commissioner for Refugees</p>
-                <div class="committee-topic">Balancing The Principle Of Non-Refoulment With State Security In Times Of Conflict</div>
-            </div>
-            <div class="committee-card reveal">
-                <img src="assets/OAS.png" alt="" class="committee-logo">
-                <h3>OAS</h3>
-                <p>Organization of American States</p>
-                <div class="committee-topic">Twentieth Meeting of Consultation of Ministers of Foreign Affairs</div>
-                <div class="committee-topic">Freeze Date: April 26, 1982</div>
-            </div>
-            <div class="committee-card reveal">
-                <img src="assets/UNW.png" alt="" class="committee-logo">
-                <h3>UNW</h3>
-                <p>United Nations Women</p>
-                <div class="committee-topic">Ensuring Equitable Access to Maternal and Reproductive Healthcare and Women's Rights</div>
-            </div>
-            <div class="committee-card reveal">
-                <img src="assets/SOCHUM.png" alt="" class="committee-logo">
-                <h3>SOCHUM</h3>
-                <p>Social Cultural and Humanitarian Committee</p>
-                <div class="committee-topic">Discussion and deliberation on the detoriating situation of human rights associated with immigration and forced migration operations</div>
-            </div>
-            <div class="committee-card reveal">
-                <img src="assets/FLAGSHIP COMMITTEE.png" alt="" class="committee-logo">
-                <h3>NARCOS+</h3>
-                <p>FLAGSHIP COMMITTEE</p>
-                <div class="committee-topic">The Extradition Question 7th August 1982 </div>
-            </div>
-            <div class="committee-card reveal">
-                <img src="assets/IPC.png" alt="" class="committee-logo">
-                <h3>IPC</h3>
-                <p>International Press Corps</p>
-                <div class="committee-topic">Role of media in reporting International affairs</div>
-            </div>
-        </div>
+        <div class="committees-grid" id="committeesGrid"></div>
     </div>
 </section>
-
-
-<section id="schedule">
-    <div class="container">
-        <div class="section-header reveal">
-            <div class="badge">Conference Schedule</div>
-            <h2 class="section-title">The road to the floor.</h2>
-        </div>
-        <div class="timeline">
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-time">July 24 · 09:00 AM</div>
-                <div class="timeline-title">Opening Ceremony & Keynote Speech</div>
-                <div class="timeline-desc">Welcome address by Secretary General</div>
-            </div>
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-time">11:30 AM</div>
-                <div class="timeline-title">Committee Session I</div>
-                <div class="timeline-desc">Roll Call, Lobbying & Setting Agenda</div>
-            </div>
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-time"></div>
-                <div class="timeline-title"></div>
-                <div class="timeline-desc"></div>
-            </div>
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-time"></div>
-                <div class="timeline-title">Committee Session II</div>
-                <div class="timeline-desc"></div>
-            </div>
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-time"></div>
-                <div class="timeline-title"></div>
-                <div class="timeline-desc"></div>
-            </div>
-        </div>
-    </div>
-</section>
-
 
 <section id="eboard" class="alt-bg">
     <div class="container">
@@ -300,13 +147,13 @@
         </div>
         <div class="eb-grid">
             <div class="eb-card reveal">
-                <div class="eb-avatar"><i class="fas fa-user-tie"></i></div>
+                <img src="assets/001.png" alt="" class="committee-logo">
                 <h3>Mukesh Krishna</h3>
                 <p>Secretary General</p>
 
             </div>
             <div class="eb-card reveal">
-                <div class="eb-avatar"><i class="fas fa-user-graduate"></i></div>
+                <img src="assets/002.png" alt="" class="committee-logo">
                 <h3>Mugilvannan</h3>
                 <p>Deputy Secretary General</p>
 
@@ -334,18 +181,22 @@
         <div class="contact-wrapper">
             <div class="contact-info">
                 <div class="info-item"><i class="fas fa-map-marker-alt"></i> <span>Vidya Mandir @ Estancia, Chengalpattu, Chennai</span></div>
-
             </div>
             <div class="contact-form">
-                <input type="text" placeholder="Your name">
-                <input type="email" placeholder="Email address">
-                <input type="text" placeholder="Institution/School">
-                <textarea placeholder="Your message..."></textarea>
-                <button class="btn-submit">Send Message <i class="fas fa-paper-plane"></i></button>
+                <input type="text" id="userName" placeholder="Your name *" required>
+                <input type="email" id="userEmail" placeholder="Email address *" required>
+                <input type="tel" id="userMobile" placeholder="Mobile number (optional)">
+                <input type="text" id="userInstitution" placeholder="Institution/School (optional)">
+                <textarea id="userMessage" placeholder="Your message *" required></textarea>
+                <button class="btn-submit" onclick="sendToGoogleSheets()">Send Message <i class="fas fa-paper-plane"></i></button>
             </div>
         </div>
     </div>
 </section>
+
+<div id="formStatus" style="margin-top: 20px; text-align: center; display: none; padding: 10px; border-radius: 5px;"></div>
+
+
 
 <footer>
     <div class="container">
