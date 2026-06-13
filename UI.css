@@ -25,7 +25,6 @@ body {
     line-height: 1.5;
     overflow-x: hidden;
 }
-
 .reveal {
     opacity: 0;
     transform: translateY(40px);
@@ -140,26 +139,24 @@ header {
     color: white;
 }
 
+
 .marquee-wrap {
     background: linear-gradient(90deg, #1f0e3a, #3b1c6e);
     overflow: hidden;
     position: relative;
     padding: 14px 0;
 }
-
 .marquee-track {
     display: flex;
     width: fit-content;
     animation: marqueeScroll 50s linear infinite;
 }
-
 .marquee-content {
     display: flex;
     gap: 48px;
     white-space: nowrap;
     flex-shrink: 0;
 }
-
 .marquee-content span {
     font-weight: 600;
     font-size: 0.85rem;
@@ -167,19 +164,14 @@ header {
     color: #c49eff;
     display: inline-block;
 }
-
 @keyframes marqueeScroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
-
 .marquee-wrap:hover .marquee-track {
     animation-play-state: paused;
 }
+
 .hero-fullscreen {
     position: relative;
     width: 100%;
@@ -292,16 +284,6 @@ header {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-8px); }
 }
-.badge-center {
-    display: inline-block;
-    background: rgba(107, 59, 201, 0.3);
-    padding: 4px 12px;
-    border-radius: 50px;
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: var(--purple-7);
-    margin-bottom: 16px;
-}
 .hero-center-box h1 {
     font-size: 3.8rem;
     background: linear-gradient(135deg, var(--purple-7), var(--purple-6), #7b3fe0);
@@ -314,17 +296,6 @@ header {
     color: #d4c0ff;
     margin-top: 8px;
     font-size: 0.9rem;
-}
-.crisis-badge {
-    margin-top: 20px;
-    display: inline-block;
-    background: rgba(255, 59, 111, 0.2);
-    padding: 6px 14px;
-    border-radius: 50px;
-    font-size: 0.75rem;
-    font-weight: bold;
-    color: #ff88aa;
-    border: 1px solid var(--crisis-red);
 }
 .btn-crisis {
     background: linear-gradient(95deg, var(--purple-5), var(--purple-4));
@@ -345,7 +316,6 @@ header {
     box-shadow: 0 0 25px var(--purple-5);
 }
 
-/* ========== COMMON SECTION STYLES ========== */
 .container {
     max-width: 1280px;
     margin: 0 auto;
@@ -382,7 +352,6 @@ section {
     font-size: 1rem;
 }
 
-/* Bento Grid */
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -437,49 +406,306 @@ section {
     transform: translateX(5px);
 }
 
-/* Committees Grid */
+/* Comm*/
 .committees-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 28px;
+    gap: 40px;
     margin-top: 20px;
 }
-.committee-logo{
-    width: 150px;
-    height: 150px;
-    border-radius: 100%;
-    margin-bottom: 20px;
-}
+
 .committee-card {
-    background: var(--card-bg);
+    width: 100%;
+    height: 450px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.committee-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
     border-radius: 32px;
-    padding: 32px;
-    transition: 0.3s;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-front {
+    background: var(--card-bg);
     border: 1px solid #2a1c44;
 }
-.committee-card:hover {
-    border-color: var(--purple-5);
-    transform: translateY(-6px);
+
+.card-back {
     background: #130c26;
+    border: 1px solid var(--purple-5);
+    transform: rotateY(180deg);
+    text-align: center;
+    overflow-y: auto;
 }
-.committee-icon {
-    font-size: 2.5rem;
-    color: var(--purple-6);
+
+.committee-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
     margin-bottom: 20px;
+    object-fit: cover;
 }
+
+/* EB*/
+.eb-members-horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    width: 100%;
+}
+.eb-member {
+    text-align: center;
+    flex: 1;
+    min-width: 100px;
+}
+.eb-logo1 {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    object-fit: cover;
+    margin-bottom: 8px;
+    border: 2px solid var(--purple-6);
+}
+.eb-member span {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--purple-7);
+    margin-top: 4px;
+}
+.eb-member small {
+    font-size: 0.7rem;
+    color: #bcabdd;
+}
+
 .committee-card h3 {
     font-size: 1.5rem;
     margin-bottom: 8px;
 }
+
 .committee-topic {
     color: var(--purple-7);
     font-weight: 600;
     margin-top: 16px;
     font-size: 0.85rem;
     font-style: italic;
+    text-align: center;
 }
 
+/* firsttime */
+.first-ever {
+    background: linear-gradient(145deg, #2a1352, #140826);
+    border-radius: 48px;
+    padding: 32px 40px;
+    margin: 40px 0 20px;
+    border: 2px solid var(--purple-6);
+    box-shadow: 0 0 25px rgba(155, 110, 255, 0.3);
+}
 
+.first-ever .badge {
+    display: inline-block;
+    background: var(--crisis-red);
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 16px;
+}
+
+.first-ever h3 {
+    font-size: 1.8rem;
+    margin: 12px 0;
+    text-align: center;
+}
+
+.first-ever > p {
+    text-align: center;
+    color: var(--purple-7);
+    margin-bottom: 40px;
+}
+
+.featured-committees {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 28px;
+    justify-content: center;
+    align-items: stretch;
+    margin-top: 20px;
+}
+
+.featured-card {
+    background: transparent;
+    width: 320px;
+    height: 450px;
+    perspective: 1000px;
+    cursor: pointer;
+    flex: 0 1 auto;
+    min-width: 280px;
+    max-width: 350px;
+}
+
+.featured-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.featured-card:hover .featured-card-inner {
+    transform: rotateY(180deg);
+}
+
+.featured-card-front,
+.featured-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 32px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.featured-card-front {
+    background: var(--card-bg);
+    border: 1px solid var(--purple-5);
+}
+
+.featured-card-back {
+    background: #130c26;
+    border: 1px solid var(--purple-5);
+    transform: rotateY(180deg);
+    text-align: center;
+    overflow-y: auto;
+}
+
+.featured-committee-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.featured-card h3 {
+    font-size: 1.8rem;
+    color: var(--purple-7);
+    margin-bottom: 8px;
+}
+
+.featured-card p {
+    color: #bcabdd;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.featured-topic {
+    color: var(--purple-7);
+    font-weight: 600;
+    margin-top: 16px;
+    font-size: 0.8rem;
+    font-style: italic;
+    text-align: center;
+}
+
+/* EB in featured */
+.featured-eb-members {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.featured-eb-member {
+    text-align: center;
+    flex: 1;
+    min-width: 90px;
+}
+
+.featured-eb-img {
+    width: 85px;
+    height: 85px;
+    border-radius: 100%;
+    object-fit: cover;
+    margin-bottom: 8px;
+    border: 2px solid var(--purple-6);
+}
+
+.featured-eb-member span {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--purple-7);
+    margin-top: 4px;
+}
+
+.featured-eb-member small {
+    font-size: 0.65rem;
+    color: #bcabdd;
+}
+
+/* Responsive - stacks vertically on mobile */
+@media (max-width: 900px) {
+    .featured-committees {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .first-ever {
+        padding: 24px 20px;
+    }
+    
+    .featured-card {
+        width: 100%;
+        max-width: 320px;
+    }
+    
+    .featured-eb-members {
+        gap: 12px;
+    }
+    
+    .featured-eb-img {
+        width: 70px;
+        height: 70px;
+    }
+}
+/* timeline*/
 .timeline {
     position: relative;
     padding-left: 30px;
@@ -515,6 +741,7 @@ section {
     margin-top: 4px;
 }
 
+/* Secretriat */
 .eb-grid {
     padding: 10px;
     display: grid;
@@ -548,64 +775,7 @@ section {
     margin-top: 12px;
 }
 
-.accordion-item {
-    background: var(--card-bg);
-    border-radius: 20px;
-    margin-bottom: 16px;
-    overflow: hidden;
-}
-.accordion-header {
-    padding: 20px 24px;
-    cursor: pointer;
-    font-weight: 700;
-    display: flex;
-    justify-content: space-between;
-    background: #0f0920;
-    transition: 0.2s;
-}
-.accordion-header:hover {
-    background: #160d2a;
-}
-.accordion-content {
-    padding: 0 24px;
-    max-height: 0;
-    overflow: hidden;
-    transition: 0.3s;
-    color: #bcabdd;
-}
-.accordion-item.active .accordion-content {
-    padding: 0 24px 20px 24px;
-    max-height: 200px;
-}
-
-.cta-section {
-    background: linear-gradient(135deg, var(--purple-3), var(--purple-1));
-    text-align: center;
-    padding: 80px 20px;
-}
-.cta-content h2 {
-    font-size: 2.5rem;
-    font-weight: 800;
-}
-.cta-content p {
-    margin: 20px 0;
-    color: #bcabdd;
-}
-.btn-cta {
-    display: inline-block;
-    background: linear-gradient(95deg, var(--purple-5), var(--purple-4));
-    padding: 14px 40px;
-    border-radius: 50px;
-    text-decoration: none;
-    color: white;
-    font-weight: 700;
-    transition: 0.3s;
-}
-.btn-cta:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 25px var(--purple-5);
-}
-
+/* contact */
 .contact-wrapper {
     display: flex;
     gap: 40px;
@@ -660,6 +830,8 @@ section {
 .btn-submit:hover {
     background: var(--purple-6);
 }
+
+/* footer */
 footer {
     background: var(--dark-bg);
     border-top: 1px solid #2a1d44;
@@ -697,7 +869,6 @@ footer {
 .social-links a:hover {
     color: var(--purple-7);
 }
-
 .copyright {
     text-align: center;
     font-size: 0.8rem;
@@ -706,6 +877,7 @@ footer {
     padding-top: 28px;
 }
 
+/* RESPONSIVE template */
 @media (max-width: 900px) {
     .bento-grid { grid-template-columns: 1fr; }
     .bento-large { grid-column: span 1; }
@@ -716,4 +888,5 @@ footer {
     .hero-center-box { padding: 28px 32px; }
     .section-title { font-size: 2rem; }
     .contact-wrapper { flex-direction: column; }
+    .eb-members-horizontal { flex-direction: row; gap: 16px; }
 }
